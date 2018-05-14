@@ -1,0 +1,8 @@
+[package]
+name = "cs"
+version = "0.1.0"
+authors = ["Denis Verkhoturov <mod.satyr@gmail.com>"]
+
+[dependencies]
+
+[dev_dependencies]
