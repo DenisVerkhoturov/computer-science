@@ -1,5 +1,6 @@
 pub mod bubble;
 pub mod quicksort;
+pub mod insert;
 
 #[cfg(test)]
 mod tests {
@@ -20,5 +21,6 @@ mod tests {
     sorting_test! {
         bubble_sort: super::bubble::sort,
         quick_sort: super::quicksort::sort,
+        insert_sort: super::insert::sort,
     }
 }
