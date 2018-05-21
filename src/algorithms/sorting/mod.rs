@@ -2,6 +2,7 @@ pub mod bubble;
 pub mod quicksort;
 pub mod insert;
 pub mod select;
+pub mod merge;
 
 #[cfg(test)]
 mod tests {
@@ -24,5 +25,6 @@ mod tests {
         quick_sort: super::quicksort::sort,
         insert_sort: super::insert::sort,
         select_sort: super::select::sort,
+        merge_top_down_sort: super::merge::top_down::sort,
     }
 }
