@@ -8,26 +8,26 @@ pub mod top_down {
             let mid = list.len() / 2;
             let left = split_and_merge(&list[..mid]);
             let right = split_and_merge(&list[mid..]);
-            return merge(&left, &right);
+            return super::merge(&left, &right);
         } else {
             return list.to_vec();
         }
     }
+}
 
-    fn merge<T: Ord + Clone>(left: &[T], right: &[T]) -> Vec<T> {
-        let count = left.len() + right.len();
-        let mut merged: Vec<T> = Vec::with_capacity(count);
-        let mut left_index = 0;
-        let mut right_index = 0;
-        while merged.len() < count {
-            if (left_index < left.len()) && (right_index >= right.len() || left[left_index] <= right[right_index]) {
-                merged.push(left[left_index].clone());
-                left_index += 1;
-            } else {
-                merged.push(right[right_index].clone());
-                right_index += 1;
-            };
-        }
-        return merged;
+fn merge<T: Ord + Clone>(left: &[T], right: &[T]) -> Vec<T> {
+    let count = left.len() + right.len();
+    let mut merged: Vec<T> = Vec::with_capacity(count);
+    let mut left_index = 0;
+    let mut right_index = 0;
+    while merged.len() < count {
+        if (left_index < left.len()) && (right_index >= right.len() || left[left_index] <= right[right_index]) {
+            merged.push(left[left_index].clone());
+            left_index += 1;
+        } else {
+            merged.push(right[right_index].clone());
+            right_index += 1;
+        };
     }
+    return merged;
 }
