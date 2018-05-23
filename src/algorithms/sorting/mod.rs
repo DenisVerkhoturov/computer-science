@@ -26,5 +26,6 @@ mod tests {
         insert_sort: super::insert::sort,
         select_sort: super::select::sort,
         merge_top_down_sort: super::merge::top_down::sort,
+        merge_bottom_up_sort: super::merge::bottom_up::sort,
     }
 }
