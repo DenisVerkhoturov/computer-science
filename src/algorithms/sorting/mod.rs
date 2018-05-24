@@ -1,4 +1,5 @@
 pub mod bubble;
+pub mod gnome;
 pub mod quicksort;
 pub mod insert;
 pub mod select;
@@ -22,6 +23,7 @@ mod tests {
 
     sorting_test! {
         bubble_sort: super::bubble::sort,
+        gnome_sort: super::gnome::sort,
         quick_sort: super::quicksort::sort,
         insert_sort: super::insert::sort,
         select_sort: super::select::sort,
