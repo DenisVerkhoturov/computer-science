@@ -9,12 +9,13 @@ fn quick_sort<T: Ord + Clone>(list: &mut Vec<T>, start: usize, end: usize) {
     if start >= end { return; }
     let mut left = start;
     let mut right = end;
-    let pivot = (start + end) / 2;
+    let mut pivot = (start + end) / 2;
     while left < right {
         while left < pivot && list[left] <= list[pivot] { left += 1; }
         while right > pivot && list[right] >= list[pivot] { right -= 1; }
         if left < right {
             list.swap(left, right);
+            pivot = if left == pivot { right } else if right == pivot { left } else { pivot };
         }
     }
     quick_sort(list, start, pivot);
