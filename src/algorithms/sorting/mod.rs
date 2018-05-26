@@ -4,6 +4,7 @@ pub mod quicksort;
 pub mod insert;
 pub mod select;
 pub mod merge;
+pub mod quick3;
 
 macro_rules! sorting_test {
     ($($name:ident: $algorithm:expr,)*) => {
@@ -58,6 +59,7 @@ sorting_test! {
     bubble_sort: super::bubble::sort,
     gnome_sort: super::gnome::sort,
     quick_sort: super::quicksort::sort,
+    three_way_quick_sort: super::quick3::sort,
     insert_sort: super::insert::sort,
     select_sort: super::select::sort,
     merge_top_down_sort: super::merge::top_down::sort,
