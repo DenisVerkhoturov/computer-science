@@ -6,9 +6,8 @@ pub fn sort<T: Ord + Clone>(list: &Vec<T>) -> Vec<T> {
 fn three_way_quick_sort<T: Ord + Clone>(list: Vec<T>) -> Vec<T> {
     if list.is_empty() { return list; }
     let pivot = list[list.len() / 2].clone();
-    let mut accumulator: (Vec<T>, Vec<T>, Vec<T>) = (Default::default(), Default::default(), Default::default());
     let (less, equal, greater) = list.into_iter().fold(
-        accumulator,
+        (Default::default(), Default::default(), Default::default()),
         |(mut less, mut equal, mut greater): (Vec<T>, Vec<T>, Vec<T>), element: T| {
             if element < pivot {
                 less.push(element);
